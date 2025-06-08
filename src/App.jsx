@@ -1,9 +1,11 @@
-import './App.css'
+// изменяем импорт
+import styles from './App.module.css'
 
 function Product() {
 	return (
 		<>
-			<p className='product'>Товар</p>
+			{/* вытаскиваем класс product из объекта styles */}
+			<p className={styles.product}>Товар</p>
 		</>
 	)
 }
