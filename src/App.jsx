@@ -1,10 +1,20 @@
-// удаляем все, оставляя лишь пустую функцию App ниже
+import './App.css'
+
+function Product() {
+	return (
+		<>
+			<p className='product'>Товар</p>
+		</>
+	)
+}
 
 function App() {
 	return (
 		<>
-			{/* Добавьте тестовый контент для проверки */}
-			<h1>Hello, React!</h1>
+			<h1>Интернет-магазин</h1>
+			<Product />
+			<Product />
+			<Product />
 		</>
 	)
 }
