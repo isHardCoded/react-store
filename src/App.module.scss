@@ -1,0 +1,129 @@
+@use './assets/styles/variables' as *;
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 20px;
+	background-color: white;
+
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+
+	div {
+		&:first-child {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+
+			h2 {
+				color: $primary-color;
+			}
+
+			input {
+				border-radius: 5px;
+				outline: none;
+				font-size: 16px;
+				border: 1px solid gainsboro;
+				padding: 5px 10px;
+
+				&:focus {
+					border: 1px solid $primary-color;
+				}
+			}
+		}
+
+		&:last-child {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+
+			button {
+				outline: 0;
+				border: 0;
+				border-radius: 5px;
+				padding: 5px 15px;
+				font-size: 16px;
+				background-color: $primary-color;
+				color: $white-color;
+				font-weight: 600;
+				cursor: pointer;
+
+				&:hover {
+					background-color: $seconday-color;
+				}
+			}
+		}
+	}
+}
+
+.container {
+	max-width: 1220px;
+	margin: 0 auto;
+}
+
+.list {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	border-radius: 10px;
+	margin-top: 100px; /* временно */
+	padding: 20px;
+	background-color: white;
+	list-style: none;
+}
+
+.product {
+	display: flex;
+	flex-direction: column;
+	width: 350px;
+	gap: 20px;
+	border-radius: 10px;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	h4 {
+		font-size: 18px;
+	}
+
+	button {
+		border: 1px solid $primary-color;
+		background-color: $white-color;
+		color: $primary-color;
+		border-radius: 100%;
+		outline: 0;
+
+		font-size: 20px;
+		padding: 5px 10px;
+
+		cursor: pointer;
+
+		&:hover {
+			background-color: $seconday-color;
+			color: $white-color;
+		}
+	}
+}
+
+img {
+	border-radius: 10px;
+}
+
+.description {
+	color: gray;
+}
+
+.price {
+	font-weight: bold;
+}

@@ -1,10 +1,23 @@
-import styles from './App.module.css'
+import styles from './App.module.scss'
 import SneakersImage from './assets/images/sneakers-image.jpg'
+import { FaRegUser } from 'react-icons/fa'
 
 function Header() {
+	const handleChange = event => {
+		const newValue = event.target.value
+		console.log('Новое значение:', newValue)
+	}
+
 	return (
 		<header className={styles.header}>
-			<h2>Logo</h2>
+			<div>
+				<h2>Store</h2>
+				<input type='text	' placeholder='Search...' onChange={handleChange} />
+			</div>
+			<div>
+				<FaRegUser size={24} color='#3258e3' />
+				<button>Profile</button>
+			</div>
 		</header>
 	)
 }
