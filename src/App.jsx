@@ -68,6 +68,20 @@ function Product() {
 }
 
 function App() {
+	const [products, setProducts] = React.useState([])
+
+	const getProducts = async () => {
+		const response = await fetch('http://localhost:8000/products')
+		const data = await response.json()
+		setProducts(data)
+	}
+
+	React.useEffect(() => {
+		getProducts()
+	}, [])
+
+	console.log(products)
+
 	return (
 		<>
 			<div className={styles.container}>
