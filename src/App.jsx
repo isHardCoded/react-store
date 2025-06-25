@@ -22,7 +22,7 @@ function Header() {
 	)
 }
 
-function Product({ name, description, price, imageUrl }) {
+function Product({ name, brand, price, imageUrl }) {
 	const [isLiked, setIsLiked] = React.useState(false)
 
 	const toggleLike = () => {
@@ -59,7 +59,7 @@ function Product({ name, description, price, imageUrl }) {
 						<button onClick={handleAddClick}>+</button>
 					</div>
 				</div>
-				<p className={styles.description}>{description}</p>
+				<p className={styles.description}>{brand}</p>
 				<p className={styles.price}>${price}</p>
 			</div>
 		</div>
