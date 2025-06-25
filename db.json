@@ -1,0 +1,25 @@
+{
+	"products": [
+		{
+			"id": 1,
+			"name": "Sneakers Red & White 2025",
+			"brand": "NIKE",
+			"price": 38.0,
+			"imageUrl": "./src/assets/images/sneakers-image.jpg"
+		},
+		{
+			"id": 2,
+			"name": "Sneakers Red & White 2025",
+			"brand": "NIKE",
+			"price": 38.0,
+			"imageUrl": "./src/assets/images/sneakers-image.jpg"
+		},
+		{
+			"id": 3,
+			"name": "Sneakers Red & White 2025",
+			"brand": "NIKE",
+			"price": 38.0,
+			"imageUrl": "./src/assets/images/sneakers-image.jpg"
+		}
+	]
+}
