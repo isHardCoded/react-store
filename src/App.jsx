@@ -1,5 +1,4 @@
 import styles from './App.module.scss'
-import SneakersImage from './assets/images/sneakers-image.jpg'
 import { FaRegUser } from 'react-icons/fa'
 import React from 'react'
 
@@ -23,7 +22,7 @@ function Header() {
 	)
 }
 
-function Product() {
+function Product({ name, description, price, imageUrl }) {
 	const [isLiked, setIsLiked] = React.useState(false)
 
 	const toggleLike = () => {
@@ -36,10 +35,10 @@ function Product() {
 
 	return (
 		<div className={styles.product}>
-			<img src={SneakersImage} alt='' />
+			<img src={imageUrl} alt='' />
 			<div className={styles.content}>
 				<div className={styles.title}>
-					<h4>Sneakers Red & White 2025</h4>
+					<h4>{name}</h4>
 					<div className={styles.actions}>
 						<button
 							className={styles.likeButton}
@@ -60,8 +59,8 @@ function Product() {
 						<button onClick={handleAddClick}>+</button>
 					</div>
 				</div>
-				<p className={styles.description}>NIKE</p>
-				<p className={styles.price}>$38.00</p>
+				<p className={styles.description}>{description}</p>
+				<p className={styles.price}>${price}</p>
 			</div>
 		</div>
 	)
@@ -80,8 +79,6 @@ function App() {
 		getProducts()
 	}, [])
 
-	console.log(products)
-
 	return (
 		<>
 			<div className={styles.container}>
@@ -89,15 +86,11 @@ function App() {
 			</div>
 			<div className={styles.container}>
 				<ul className={styles.list}>
-					<li>
-						<Product />
-					</li>
-					<li>
-						<Product />
-					</li>
-					<li>
-						<Product />
-					</li>
+					{products.map(product => (
+						<li>
+							<Product {...product} />
+						</li>
+					))}
 				</ul>
 			</div>
 		</>
