@@ -1,99 +1,54 @@
 import styles from './App.module.scss'
-import { FaRegUser } from 'react-icons/fa'
-import React from 'react'
 
-function Header() {
-	const handleChange = event => {
-		const newValue = event.target.value
-		console.log('Новое значение:', newValue)
-	}
+import CartIcon from './assets/icons/cart.svg'
+import UserIcon from './assets/icons/user.svg'
+import WishlistIcon from './assets/icons/wishlist.svg'
+import LoopIcon from './assets/icons/loop.svg'
 
+const Header = () => {
 	return (
 		<header className={styles.header}>
-			<div>
-				<h2>Store</h2>
-				<input type='text	' placeholder='Search...' onChange={handleChange} />
+			<h2>Exclusive</h2>
+			<nav>
+				<ul>
+					<li>
+						<a href='#'>Home</a>
+					</li>
+					<li>
+						<a href='#'>Contact</a>
+					</li>
+					<li>
+						<a href='#'>About</a>
+					</li>
+					<li>
+						<a href='#'>Sign Up</a>
+					</li>
+				</ul>
+			</nav>
+			<div className={styles.search}>
+				<input type='text' placeholder='What are you looking for?' />
+				<img src={LoopIcon} alt='' />
 			</div>
-			<div>
-				<FaRegUser size={24} color='#3258e3' />
-				<button>Profile</button>
+			<div className={styles.buttons}>
+				<button>
+					<img src={WishlistIcon} alt='' />
+				</button>
+				<button>
+					<img src={CartIcon} alt='' />
+				</button>
+				<button>
+					<img src={UserIcon} alt='' />
+				</button>
 			</div>
 		</header>
 	)
 }
 
-function Product({ name, brand, price, imageUrl }) {
-	const [isLiked, setIsLiked] = React.useState(false)
-
-	const toggleLike = () => {
-		setIsLiked(!isLiked)
-	}
-
-	function handleAddClick() {
-		console.log('Working!')
-	}
-
+const App = () => {
 	return (
-		<div className={styles.product}>
-			<img src={imageUrl} alt='' />
-			<div className={styles.content}>
-				<div className={styles.title}>
-					<h4>{name}</h4>
-					<div className={styles.actions}>
-						<button
-							className={styles.likeButton}
-							onClick={toggleLike}
-							aria-label={isLiked ? 'Убрать лайк' : 'Добавить лайк'}
-						>
-							<svg
-								width='18'
-								height='18'
-								viewBox='0 0 24 24'
-								fill={isLiked ? 'red' : 'none'}
-								stroke={isLiked ? 'red' : 'currentColor'}
-								strokeWidth='1.5'
-							>
-								<path d='M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z' />
-							</svg>
-						</button>
-						<button onClick={handleAddClick}>+</button>
-					</div>
-				</div>
-				<p className={styles.description}>{brand}</p>
-				<p className={styles.price}>${price}</p>
-			</div>
+		<div className={styles.container}>
+			<Header />
 		</div>
-	)
-}
-
-function App() {
-	const [products, setProducts] = React.useState([])
-
-	const getProducts = async () => {
-		const response = await fetch('http://localhost:8000/products')
-		const data = await response.json()
-		setProducts(data)
-	}
-
-	React.useEffect(() => {
-		getProducts()
-	}, [])
-
-	return (
-		<>
-			<div className={styles.container}>
-				<Header />
-			</div>
-			<div className={styles.container}>
-				<ul className={styles.list}>
-					{products.map(product => (
-						<li>
-							<Product {...product} />
-						</li>
-					))}
-				</ul>
-			</div>
-		</>
 	)
 }
 
