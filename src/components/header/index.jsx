@@ -4,6 +4,7 @@ import CartIcon from '../../assets/icons/cart.svg'
 import UserIcon from '../../assets/icons/user.svg'
 import WishlistIcon from '../../assets/icons/wishlist.svg'
 import LoopIcon from '../../assets/icons/loop.svg'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
 	return (
@@ -12,13 +13,13 @@ const Header = () => {
 			<nav>
 				<ul>
 					<li>
-						<a href='#'>Home</a>
+						<Link to={{ pathname: '/' }}>Home</Link>
 					</li>
 					<li>
-						<a href='#'>Contact</a>
+						<Link to={{ pathname: '/contact' }}>Contact</Link>
 					</li>
 					<li>
-						<a href='#'>About</a>
+						<Link to={{ pathname: '/about' }}>About</Link>
 					</li>
 					<li>
 						<a href='#'>Sign Up</a>
@@ -31,10 +32,14 @@ const Header = () => {
 			</div>
 			<div className={styles.buttons}>
 				<button>
-					<img src={WishlistIcon} alt='' />
+					<Link to={{ pathname: '/wishlist' }}>
+						<img src={WishlistIcon} alt='' />
+					</Link>
 				</button>
 				<button>
-					<img src={CartIcon} alt='' />
+					<Link to={{ pathname: '/cart' }}>
+						<img src={CartIcon} alt='' />
+					</Link>
 				</button>
 				<button>
 					<img src={UserIcon} alt='' />
