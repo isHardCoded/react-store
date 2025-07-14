@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './index.module.scss'
 
-import ProductCard from '../card'
+import ProductCard from '../../card/product'
 
 const ProductList = () => {
 	const [products, setProducts] = React.useState([])

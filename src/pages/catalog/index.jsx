@@ -1,7 +1,7 @@
 import styles from './index.module.scss'
 
 import Header from '../../components/header/index'
-import ProductList from '../../components/list/index'
+import ProductList from '../../components/list/product/index'
 
 const Catalog = () => {
 	return (

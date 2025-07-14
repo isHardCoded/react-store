@@ -1,6 +1,6 @@
 import styles from './index.module.scss'
 
-import WishIcon from '../../assets/icons/wish.svg'
+import WishIcon from '../../../assets/icons/wish.svg'
 
 const ProductCard = ({ name, price, imageUrl }) => {
 	return (
