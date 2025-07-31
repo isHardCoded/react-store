@@ -1,18 +1,20 @@
 import CartItem from '../../card/cart'
 import styles from './index.module.scss'
+import { useCart } from '../../../hooks/useCart'
 
 const CartList = () => {
+	const { cart, loading, error } = useCart()
+
+	if (loading) return <p>Загрузка корзины...</p>
+	if (error) return <p>Ошибка: {error}</p>
+
 	return (
 		<ul className={styles.list}>
-			<li>
-				<CartItem />
-			</li>
-			<li>
-				<CartItem />
-			</li>
-			<li>
-				<CartItem />
-			</li>
+			{cart.map(item => (
+				<li key={item.id}>
+					<CartItem item={item} />
+				</li>
+			))}
 		</ul>
 	)
 }
