@@ -8,13 +8,16 @@ import {
 
 import Catalog from './pages/catalog'
 import Cart from './pages/cart'
+import { CartProvider } from './context/CartContext'
 
 createRoot(document.getElementById('root')).render(
-	<Router>
-		<Routes>
-			<Route path='/' element={<Navigate to='/catalog' replace />} />
-			<Route path='/catalog' element={<Catalog />} />
-			<Route path='/cart' element={<Cart />} />
-		</Routes>
-	</Router>
+	<CartProvider>
+		<Router>
+			<Routes>
+				<Route path='/' element={<Navigate to='/catalog' replace />} />
+				<Route path='/catalog' element={<Catalog />} />
+				<Route path='/cart' element={<Cart />} />
+			</Routes>
+		</Router>
+	</CartProvider>
 )
