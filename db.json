@@ -49,5 +49,22 @@
       "imageUrl": "./src/assets/images/products/jacket.svg"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "50ef",
+      "productId": 1,
+      "name": "Breed Dry Dog Food",
+      "price": 100,
+      "imageUrl": "./src/assets/images/products/dog-food.svg",
+      "quantity": 1
+    },
+    {
+      "id": "78e6",
+      "productId": 2,
+      "name": "CANON EOS DSLR Camera",
+      "price": 360,
+      "imageUrl": "./src/assets/images/products/camera.svg",
+      "quantity": 1
+    }
+  ]
 }

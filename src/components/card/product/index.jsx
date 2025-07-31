@@ -14,17 +14,19 @@ const ProductCard = ({ id, name, price, imageUrl }) => {
 			<div className={styles.image}>
 				<img src={imageUrl} alt={name} />
 				<div className={styles.buttons}>
-					<button onClick={handleAdd}>В корзину</button>
 					<button>
 						<img src={WishIcon} alt='Избранное' />
 					</button>
 				</div>
 			</div>
 			<div className={styles.content}>
-				<h4>{name}</h4>
-				<div className={styles.stats}>
-					<span>${price}</span>
+				<div>
+					<h4>{name}</h4>
+					<div className={styles.stats}>
+						<span>${price}</span>
+					</div>
 				</div>
+				<button onClick={handleAdd}>+</button>
 			</div>
 		</div>
 	)
