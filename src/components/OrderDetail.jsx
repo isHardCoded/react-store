@@ -1,5 +1,5 @@
 import styles from './OrderDetail.module.scss'
-import { useCart } from '../hooks/useCart'
+import { useCart } from '../context/CartContext'
 
 const OrderDetail = () => {
 	const { cart } = useCart()

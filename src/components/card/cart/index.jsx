@@ -1,6 +1,6 @@
 import styles from './index.module.scss'
 import TrashIcon from '../../../assets/icons/trash.svg'
-import { useCart } from '../../../hooks/useCart'
+import { useCart } from '../../../context/CartContext'
 
 const CartItem = ({ item }) => {
 	const { removeFromCart, updateQuantity } = useCart()

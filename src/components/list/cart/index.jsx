@@ -1,6 +1,6 @@
 import CartItem from '../../card/cart'
 import styles from './index.module.scss'
-import { useCart } from '../../../hooks/useCart'
+import { useCart } from '../../../context/CartContext'
 
 const CartList = () => {
 	const { cart, loading, error } = useCart()
