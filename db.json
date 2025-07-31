@@ -1,53 +1,53 @@
 {
-	"products": [
-		{
-			"id": 1,
-			"name": "Breed Dry Dog Food",
-			"price": 100,
-			"imageUrl": "./src/assets/images/products/dog-food.svg"
-		},
-		{
-			"id": 2,
-			"name": "CANON EOS DSLR Camera",
-			"price": 360,
-			"imageUrl": "./src/assets/images/products/camera.svg"
-		},
-		{
-			"id": 3,
-			"name": "ASUS FHD Gaming Laptop",
-			"price": 700,
-			"imageUrl": "./src/assets/images/products/laptop.svg"
-		},
-		{
-			"id": 4,
-			"name": "Curology Product Set ",
-			"price": 500,
-			"imageUrl": "./src/assets/images/products/curoset.svg"
-		},
-		{
-			"id": 5,
-			"name": "Kids Electric Car",
-			"price": 960,
-			"imageUrl": "./src/assets/images/products/car.svg"
-		},
-		{
-			"id": 6,
-			"name": "Jr. Zoom Soccer Cleats",
-			"price": 1160,
-			"imageUrl": "./src/assets/images/products/soccer.svg"
-		},
-		{
-			"id": 7,
-			"name": "GP11 Shooter USB Gamepad",
-			"price": 660,
-			"imageUrl": "./src/assets/images/products/gamepad.svg"
-		},
-		{
-			"id": 8,
-			"name": "Quilted Satin Jacket",
-			"price": 660,
-			"imageUrl": "./src/assets/images/products/jacket.svg"
-		}
-	],
-	"cart": []
+  "products": [
+    {
+      "id": 1,
+      "name": "Breed Dry Dog Food",
+      "price": 100,
+      "imageUrl": "./src/assets/images/products/dog-food.svg"
+    },
+    {
+      "id": 2,
+      "name": "CANON EOS DSLR Camera",
+      "price": 360,
+      "imageUrl": "./src/assets/images/products/camera.svg"
+    },
+    {
+      "id": 3,
+      "name": "ASUS FHD Gaming Laptop",
+      "price": 700,
+      "imageUrl": "./src/assets/images/products/laptop.svg"
+    },
+    {
+      "id": 4,
+      "name": "Curology Product Set ",
+      "price": 500,
+      "imageUrl": "./src/assets/images/products/curoset.svg"
+    },
+    {
+      "id": 5,
+      "name": "Kids Electric Car",
+      "price": 960,
+      "imageUrl": "./src/assets/images/products/car.svg"
+    },
+    {
+      "id": 6,
+      "name": "Jr. Zoom Soccer Cleats",
+      "price": 1160,
+      "imageUrl": "./src/assets/images/products/soccer.svg"
+    },
+    {
+      "id": 7,
+      "name": "GP11 Shooter USB Gamepad",
+      "price": 660,
+      "imageUrl": "./src/assets/images/products/gamepad.svg"
+    },
+    {
+      "id": 8,
+      "name": "Quilted Satin Jacket",
+      "price": 660,
+      "imageUrl": "./src/assets/images/products/jacket.svg"
+    }
+  ],
+  "cart": []
 }

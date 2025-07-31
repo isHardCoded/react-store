@@ -1,24 +1,36 @@
 import styles from './index.module.scss'
-import JacketImage from '../../../assets/images/products/jacket.svg'
 import TrashIcon from '../../../assets/icons/trash.svg'
+import { useCart } from '../../../hooks/useCart'
 
-const CartItem = () => {
+const CartItem = ({ item }) => {
+	const { removeFromCart, updateQuantity } = useCart()
+
+	const handleIncrement = () => {
+		updateQuantity(item.id, item.quantity + 1)
+	}
+
+	const handleDecrement = () => {
+		if (item.quantity > 1) {
+			updateQuantity(item.id, item.quantity - 1)
+		}
+	}
+
 	return (
 		<div className={styles.item}>
-			<button className={styles.trash}>
-				<img src={TrashIcon} alt='' />
+			<button className={styles.trash} onClick={() => removeFromCart(item.id)}>
+				<img src={TrashIcon} alt='Удалить' />
 			</button>
 			<div className={styles.image}>
-				<img src={JacketImage} alt='' />
+				<img src={item.imageUrl} alt={item.name} />
 			</div>
 			<div className={styles.content}>
-				<h2>Quilted Satin Jacket</h2>
+				<h2>{item.name}</h2>
 				<div className={styles.wrapper}>
-					<span className={styles.price}>$145</span>
+					<span className={styles.price}>${item.price}</span>
 					<div className={styles.buttons}>
-						<button>-</button>
-						<span>1</span>
-						<button>+</button>
+						<button onClick={handleDecrement}>-</button>
+						<span>{item.quantity}</span>
+						<button onClick={handleIncrement}>+</button>
 					</div>
 				</div>
 			</div>
