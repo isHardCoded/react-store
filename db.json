@@ -48,5 +48,6 @@
 			"price": 660,
 			"imageUrl": "./src/assets/images/products/jacket.svg"
 		}
-	]
+	],
+	"cart": []
 }
