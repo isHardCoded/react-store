@@ -3,7 +3,13 @@ import styles from './index.module.scss'
 
 const CartList = () => {
 	return (
-		<ul>
+		<ul className={styles.list}>
+			<li>
+				<CartItem />
+			</li>
+			<li>
+				<CartItem />
+			</li>
 			<li>
 				<CartItem />
 			</li>
