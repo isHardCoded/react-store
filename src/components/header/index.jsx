@@ -5,8 +5,13 @@ import UserIcon from '../../assets/icons/user.svg'
 import WishlistIcon from '../../assets/icons/wishlist.svg'
 import LoopIcon from '../../assets/icons/loop.svg'
 import { Link } from 'react-router-dom'
+import { useCart } from '../../context/CartContext'
 
 const Header = () => {
+	const { cart } = useCart()
+
+	const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0)
+
 	return (
 		<header className={styles.header}>
 			<h2>Exclusive</h2>
@@ -36,13 +41,16 @@ const Header = () => {
 						<img src={WishlistIcon} alt='' />
 					</Link>
 				</button>
-				<button>
+				<button className={styles.cartButton}>
 					<Link to={{ pathname: '/cart' }}>
-						<img src={CartIcon} alt='' />
+						<img src={CartIcon} alt='Cart' />
+						{totalCount > 0 && (
+							<span className={styles.badge}>{totalCount}</span>
+						)}
 					</Link>
 				</button>
 				<button>
-					<img src={UserIcon} alt='' />
+					<img src={UserIcon} alt='User' />
 				</button>
 			</div>
 		</header>

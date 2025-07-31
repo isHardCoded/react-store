@@ -64,6 +64,38 @@
       "name": "CANON EOS DSLR Camera",
       "price": 360,
       "imageUrl": "./src/assets/images/products/camera.svg",
+      "quantity": 3
+    },
+    {
+      "id": "49c6",
+      "productId": 5,
+      "name": "Kids Electric Car",
+      "price": 960,
+      "imageUrl": "./src/assets/images/products/car.svg",
+      "quantity": 1
+    },
+    {
+      "id": "baaa",
+      "productId": 6,
+      "name": "Jr. Zoom Soccer Cleats",
+      "price": 1160,
+      "imageUrl": "./src/assets/images/products/soccer.svg",
+      "quantity": 1
+    },
+    {
+      "id": "1a96",
+      "productId": 4,
+      "name": "Curology Product Set ",
+      "price": 500,
+      "imageUrl": "./src/assets/images/products/curoset.svg",
+      "quantity": 1
+    },
+    {
+      "id": "b931",
+      "productId": 3,
+      "name": "ASUS FHD Gaming Laptop",
+      "price": 700,
+      "imageUrl": "./src/assets/images/products/laptop.svg",
       "quantity": 1
     }
   ]
