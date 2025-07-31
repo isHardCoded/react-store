@@ -1,19 +1,21 @@
+import React from 'react'
+
 import styles from './index.module.scss'
 import TrashIcon from '../../../assets/icons/trash.svg'
 import { useCart } from '../../../context/CartContext'
 
-const CartItem = ({ item }) => {
+const CartItem = React.memo(({ item }) => {
 	const { removeFromCart, updateQuantity } = useCart()
 
-	const handleIncrement = () => {
+	const handleIncrement = React.useCallback(() => {
 		updateQuantity(item.id, item.quantity + 1)
-	}
+	}, [item.id, item.quantity, updateQuantity])
 
-	const handleDecrement = () => {
+	const handleDecrement = React.useCallback(() => {
 		if (item.quantity > 1) {
 			updateQuantity(item.id, item.quantity - 1)
 		}
-	}
+	}, [item.id, item.quantity, updateQuantity])
 
 	return (
 		<div className={styles.item}>
@@ -36,6 +38,6 @@ const CartItem = ({ item }) => {
 			</div>
 		</div>
 	)
-}
+})
 
 export default CartItem

@@ -1,16 +1,20 @@
+import React from 'react'
 import styles from './OrderDetail.module.scss'
 import { useCart } from '../context/CartContext'
 
 const OrderDetail = () => {
 	const { cart } = useCart()
 
-	const subtotal = cart.reduce(
-		(acc, item) => acc + item.price * item.quantity,
-		0
-	)
-	const discount = subtotal * 0.2
-	const delivery = 15
-	const total = subtotal - discount + delivery
+	const { subtotal, discount, delivery, total } = React.useMemo(() => {
+		const subtotal = cart.reduce(
+			(acc, item) => acc + item.price * item.quantity,
+			0
+		)
+		const discount = subtotal * 0.2
+		const delivery = 15
+		const total = subtotal - discount + delivery
+		return { subtotal, discount, delivery, total }
+	}, [cart])
 
 	return (
 		<div className={styles.detail}>
